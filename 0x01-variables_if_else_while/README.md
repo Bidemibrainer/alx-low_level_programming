@@ -1,0 +1,1 @@
+The project done during **full stack software engineering studies** it aims to learn about arithmetic operators, relational operators, boolean operators, comments, declaring variables and loop in "C" language.
