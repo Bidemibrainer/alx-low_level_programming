@@ -2,12 +2,12 @@
 #include <stdlib.h>
 #include <time.h>
 /**
- * main - A Program that prints _putchar and a new line
+ * main - entry point
  *
  * Return: Always 0 (success)
  */
 int main(void)
 {
-	printf("_putchar\n");
+	printf("0-putchar\n");
 	return (0);
 }
