@@ -1,29 +1,49 @@
 #include <stdio.h>
 /**
- * main - Entry point
+ * main - Prints the first 98 fibonacci numbers
  *
- * Description: Program that finds and prints the first 98 Fibonacci
- *
- * Return: Always 0 successful
+ * Return: Always 0.
  */
 int main(void)
 {
-	unsigned long int t0 = 0, t1 = 1, s;
-	int i;
+	int c, boolean, boolean2;
+	long int n1, n2, fn, fn2, n11, n22;
 
-	for (i = 1; i <= 98; i++)
+	n1 = 1;
+	n2 = 2;
+	boolean = boolean2 = 1;
+	printf("%ld, %ld", n1, n2);
+	for (c = 0; c < 96; c++)
 	{
-		s = t0 + t1;
-		if (i != 98)
+		if (boolean)
 		{
-			printf("%lu, ", s);
+			fn = n1 + n2;
+			printf(", %ld", fn);
+			n1 = n2;
+			n2 = fn;
 		}
 		else
 		{
-			printf("%lu\n", s);
+			if (boolean2)
+			{
+				n11 = n1 % 1000000000;
+				n22 = n2 % 1000000000;
+				n1 = n1 / 1000000000;
+				n2 = n2 / 1000000000;
+				boolean2 = 0;
+			}
+			fn2 = (n11 + n22);
+			fn = n1 + n2 + (fn2 / 1000000000);
+			printf(", %ld", fn);
+			printf("%ld", fn2 % 1000000000);
+			n1 = n2;
+			n11 = n22;
+			n2 = fn;
+			n22 = (fn2 % 1000000000);
 		}
-		t0 = t1;
-		t1 = s;
+		if (((n1 + n2) < 0) && boolean == 1)
+			boolean = 0;
 	}
+	printf("\n");
 	return (0);
 }
